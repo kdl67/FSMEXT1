@@ -39,7 +39,7 @@ function getProject(cloudHost, account, company, serviceCall_id) {
   return new Promise(resolve => {
 
     // Fetch Activity object
-    fetch(`https://${cloudHost}/api/data/v4/ServiceCall/${serviceCall_id}?dtos=ServiceCall.27&account=${account}&company=${company}`, {
+    fetch(`https://${cloudHost}/api/data/v4/ServiceCall/1F7C0EB08C374A028015F0C57EE1C667?dtos=ServiceCall.27&account=${account}&company=${company}`, {
       headers
       })
         .then(response => response.json())
