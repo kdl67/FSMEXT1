@@ -63,9 +63,9 @@
 
             updateUI("Loading ...");
             let project = "1F7C0EB08C374A028015F0C57EE1C667";
-            project = await getProject(cloudHost, account, company, serviceCallID);
+            project = await getProject(cloudHost, account, company, activityID);
 
-            updateUI(project ? `${serviceCallID.project}` : `${project}`);
+            updateUI(project ? `${activityID.project}` : `${project}`);
           });
         });
       }
