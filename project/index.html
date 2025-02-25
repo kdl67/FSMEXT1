@@ -61,8 +61,8 @@
           // Add a listener expecting activityID
           shellSdk.onViewState('serviceCallID', async serviceCallID => {
 
-            updateUI(`Loading ...`);
-            let project = '1F7C0EB08C374A028015F0C57EE1C667';
+            updateUI("Loading ...");
+            let project = "1F7C0EB08C374A028015F0C57EE1C667";
             project = await getProject(cloudHost, account, company, serviceCallID);
 
             updateUI(project ? `${serviceCallID.project}` : `${project}`);
