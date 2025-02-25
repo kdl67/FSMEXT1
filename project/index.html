@@ -19,11 +19,10 @@
 
       // Display an error message if extension does not run within shell
       if (!ShellSdk.isInsideShell()) {
-      
+        updateUI('Unable to reach shell eventAPI');
       } else {
         // Initialise ShellSDK to connect with parent shell library
         const shellSdk = ShellSdk.init(parent, '*');
-          updateUI('Unable to reach shell eventAPI');
 
         // Initialise the extension by requesting the fsm context
         shellSdk.emit(SHELL_EVENTS.Version1.REQUIRE_CONTEXT, {
@@ -57,7 +56,8 @@
            * the time left in seconds.
            */
           initializeRefreshTokenStrategy(shellSdk, auth);
-          updateUI("The project is 1F7C0EB08C374A028015F0C57EE1C667");
+          //updateUI("The project is 1F7C0EB08C374A028015F0C57EE1C667");
+          updateUI(user);
           // Add a listener expecting activityID
           shellSdk.onViewState('serviceCallID', async serviceCallID => {
 
