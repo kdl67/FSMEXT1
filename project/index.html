@@ -44,7 +44,6 @@
             // extract authentication data from event content
             auth
           } = JSON.parse(event);
-          updateUI(user);
           /**
            * Access_token has a short life span and needs to be refreshed before expiring. Each
            * extension needs to implement its own strategy to fresh it.
@@ -57,7 +56,7 @@
            */
           initializeRefreshTokenStrategy(shellSdk, auth);
          // updateUI("The project is 1F7C0EB08C374A028015F0C57EE1C667");
-         // updateUI(user);
+          updateUI(user);
          
           // Add a listener expecting activityID
            shellSdk.onViewState('activityID', async activityID => {
@@ -72,7 +71,7 @@
   // console.log(selectedServiceCallId); // -> "2081B33B672E4B69B44A902CB65CB6A0" or null
   // // use the public API from SAP Field Service Management to retrieve the activity object based on the id value
   //            updateUI(selectedServiceCallId);
-});
+//});
         });
       }
     </script>
