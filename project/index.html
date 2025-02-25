@@ -19,10 +19,11 @@
 
       // Display an error message if extension does not run within shell
       if (!ShellSdk.isInsideShell()) {
-        updateUI('Unable to reach shell eventAPI');
+      
       } else {
         // Initialise ShellSDK to connect with parent shell library
         const shellSdk = ShellSdk.init(parent, '*');
+          updateUI('Unable to reach shell eventAPI');
 
         // Initialise the extension by requesting the fsm context
         shellSdk.emit(SHELL_EVENTS.Version1.REQUIRE_CONTEXT, {
