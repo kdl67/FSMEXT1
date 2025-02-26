@@ -21,7 +21,7 @@
         const shellSdk = ShellSdk.init(parent, origin);
         //updateUI(ShellSdk.VERSION);
         updateUI(shellSdk.isInsideShellModal());
-        shellSdk.emit(SHELL_EVENTS.Version1.REQUIRE_CONTEXT, {
+        shellSdk.emit(SHELL_EVENTS.Version2.REQUIRE_CONTEXT, {
           clientIdentifier: 'selectedServiceCallId',
           auth: {
             response_type: 'token'  // request a user token within the context
