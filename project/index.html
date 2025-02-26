@@ -19,7 +19,7 @@
       } else {
         //import { ShellSdk, SHELL_EVENTS } from 'fsm-shell';   not needed?
         const shellSdk = ShellSdk.init(parent, '*');
-        console.log(ShellSdk.VERSION);
+       // console.log(ShellSdk.VERSION);
         updateUI(ShellSdk.VERSION);
         // Initialise the extension by requesting the fsm context
         shellSdk.emit(SHELL_EVENTS.Version1.REQUIRE_CONTEXT, {
@@ -42,7 +42,7 @@
 
           initializeRefreshTokenStrategy(shellSdk, auth);
          // updateUI("The project is 1F7C0EB08C374A028015F0C57EE1C667");
-          updateUI(user);
+         // updateUI(user);
           // Add a listener expecting activityID
            shellSdk.onViewState('activityID', async activityID => {
 
