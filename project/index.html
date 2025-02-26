@@ -17,7 +17,8 @@
       if (!ShellSdk.isInsideShell()) {
         updateUI('Unable to reach shell eventAPI');
       } else {
-        const shellSdk = ShellSdk.init(parent, '*');
+        //const shellSdk = ShellSdk.init(parent, '*');
+        const shellSdk = ShellSdk.init(parent, origin);
         updateUI(ShellSdk.VERSION);
         shellSdk.emit(SHELL_EVENTS.Version1.REQUIRE_CONTEXT, {
           clientIdentifier: 'selectedServiceCallId',
