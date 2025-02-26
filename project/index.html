@@ -21,12 +21,9 @@
         const shellSdk = ShellSdk.init(parent, '*');
        // console.log(ShellSdk.VERSION);
         updateUI(ShellSdk.VERSION);
-        // Initialise the extension by requesting the fsm context
         shellSdk.emit(SHELL_EVENTS.Version1.REQUIRE_CONTEXT, {
-          clientIdentifier: 'project',
-          auth: {
-            response_type: 'token'  // request a user token within the context
-          }
+          clientIdentifier: '0001711c-IntegrationTestPostman',
+          clientSecret: 'b54b1c04-0203-498a-868d-e97f1a499683',
         });
 
         // Callback on fsm context response
