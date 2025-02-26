@@ -18,7 +18,7 @@
         updateUI('Unable to reach shell eventAPI');
       } else {
         const shellSdk = ShellSdk.init(parent, '*');
-       // updateUI(ShellSdk.VERSION);
+        updateUI(ShellSdk.VERSION);
         shellSdk.emit(SHELL_EVENTS.Version1.REQUIRE_CONTEXT, {
           clientIdentifier: 'selectedServiceCallId',
           auth: {
