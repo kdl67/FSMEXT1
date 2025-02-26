@@ -30,9 +30,11 @@
 
         shellSdk.on(SHELL_EVENTS.Version2.REQUIRE_CONTEXT, handler);
         const handler = (context, origin) => {
-        updateUI("hello world"); 
+          updateUI("hello world"); 
         };
-
+        const errorhandler = (error) => {
+          updateUI("hello error");
+        };
         
         // shellSdk.on(SHELL_EVENTS.Version1.REQUIRE_CONTEXT, (event) => {
         //   const {
