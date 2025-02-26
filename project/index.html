@@ -19,7 +19,8 @@
       } else {
         //const shellSdk = ShellSdk.init(parent, '*');
         const shellSdk = ShellSdk.init(parent, origin);
-        updateUI(ShellSdk.VERSION);
+        //updateUI(ShellSdk.VERSION);
+        updateUI(ShellSdk.isInsideShell());
         shellSdk.emit(SHELL_EVENTS.Version1.REQUIRE_CONTEXT, {
           clientIdentifier: 'selectedServiceCallId',
           auth: {
