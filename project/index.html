@@ -21,14 +21,14 @@
         const shellSdk = ShellSdk.init(parent, origin);
         //updateUI(ShellSdk.VERSION);
         //updateUI(shellSdk.isInsideShellModal());
-        shellSdk.emit(SHELL_EVENTS.Version2.REQUIRE_CONTEXT, {
+        shellSdk.emit(SHELL_EVENTS.Version1.REQUIRE_CONTEXT, {
           clientIdentifier: 'selectedServiceCallId',
           auth: {
             response_type: 'token'  // request a user token within the context
           }
         });
 
-        shellSdk.on(SHELL_EVENTS.Version2.REQUIRE_CONTEXT, handler);
+        shellSdk.on(SHELL_EVENTS.Version1.REQUIRE_CONTEXT, handler);
         const handler = (context, origin) => {
           updateUI("hello world"); 
         };
@@ -52,13 +52,13 @@
            //   project = await getProject(cloudHost, account, company, selectedServiceCallId);
            //   //updateUI(project ? `${selectedServiceCallid.project}` : `${project}`);
            // });
-          this.shellSdk.onViewState('selectedServiceCallId', (selectedServiceCallId => {
+        //  this.shellSdk.onViewState('selectedServiceCallId', (selectedServiceCallId => {
   //console.log(selectedServiceCallId); // -> "2081B33B672E4B69B44A902CB65CB6A0" or null
   // use the public API from SAP Field Service Management to retrieve the activity object based on the id value
             //const selectedServiceCallId = "hello world";
             //updateUI(selectedServiceCallId);
-          }));
-        });
+         // }));
+       // });
       }
     </script>
   </body>
