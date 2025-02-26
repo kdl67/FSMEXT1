@@ -45,19 +45,19 @@
           const selectedServiceCallId = "1234";
           updateUI(selectedServiceCallId);
           // Add a listener expecting activityID
-           this.shellSdk.onViewState('selectedServiceCallId', async selectedServiceCallId => {
+           // this.shellSdk.onViewState('selectedServiceCallId', async selectedServiceCallId => {
 
-            // updateUI("Loading ...");
-             let project = "1F7C0EB08C374A028015F0C57EE1C667";
-             project = await getProject(cloudHost, account, company, selectedServiceCallId);
+           //  // updateUI("Loading ...");
+           //   let project = "1F7C0EB08C374A028015F0C57EE1C667";
+           //   project = await getProject(cloudHost, account, company, selectedServiceCallId);
 
-             //updateUI(project ? `${selectedServiceCallId.project}` : `${project}`);
-           });
-  //         this.shellSdk.onViewState('selectedServiceCallId', (selectedServiceCallId => {
-  // console.log(selectedServiceCallId); // -> "2081B33B672E4B69B44A902CB65CB6A0" or null
-  // // use the public API from SAP Field Service Management to retrieve the activity object based on the id value
-  //            updateUI(selectedServiceCallId);
-//});
+           //   //updateUI(project ? `${selectedServiceCallId.project}` : `${project}`);
+           // });
+          this.shellSdk.onViewState('selectedServiceCallId', (selectedServiceCallId => {
+  //console.log(selectedServiceCallId); // -> "2081B33B672E4B69B44A902CB65CB6A0" or null
+  // use the public API from SAP Field Service Management to retrieve the activity object based on the id value
+             updateUI(selectedServiceCallId);
+}));
         });
       }
     </script>
