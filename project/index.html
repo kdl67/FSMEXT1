@@ -27,27 +27,7 @@
             response_type: 'token'  // request a user token within the context
           }
         });
-        this.sdk.emit(SHELL_EVENTS.Version2.MODAL.OPEN, {
-  url: 'https://example.com',
-  modalSettings: {
-    title: 'My title', // string
-    showTitleHeader: true,
-
-    hasBackdrop: false,
-    backdropClickCloseable: false,
-    escKeyCloseable: true,
-    focusTrapped: false,
-    draggable: true,
-    resizable: true,
-
-    isScrollbarHidden: false,
-    width: '25px';
-    height: '25px';
-  },
-  data: { startTime: (new Date()).toString() } // no schema, you can pass any data relevant to your extension
-});
-
-
+        
         // Callback on fsm context response
         shellSdk.on(SHELL_EVENTS.Version1.REQUIRE_CONTEXT, (event) => {
 
@@ -73,11 +53,17 @@
 
            //   //updateUI(project ? `${selectedServiceCallid.project}` : `${project}`);
            // });
-          this.shellSdk.onViewState('selectedservicecallid', (selectedservicecallid => {
+        //  this.shellSdk.onViewState('selectedservicecallid', (selectedservicecallid => {
   //console.log(selectedservicecallid); // -> "2081B33B672E4B69B44A902CB65CB6A0" or null
   // use the public API from SAP Field Service Management to retrieve the activity object based on the id value
-             updateUI(selectedservicecallid);
-}));
+           //  updateUI(selectedservicecallid);
+//}));
+          this.sdk.setViewState('TECHNICIAN', id);
+          this.sdk.onViewState('TECHNICIAN', id => {
+            this.selectedId = id;
+            updateUI(selectedId);
+          }))
+
         });
       }
     </script>
