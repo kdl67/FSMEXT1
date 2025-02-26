@@ -22,8 +22,10 @@
        // console.log(ShellSdk.VERSION);
        // updateUI(ShellSdk.VERSION);
         shellSdk.emit(SHELL_EVENTS.Version1.REQUIRE_CONTEXT, {
-          clientIdentifier: '0001711c-IntegrationTestPostman',
-
+          clientIdentifier: 'service-call',
+          auth: {
+            response_type: 'token'  // request a user token within the context
+          }
         });
 
         // Callback on fsm context response
