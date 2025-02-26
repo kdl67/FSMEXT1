@@ -20,22 +20,28 @@
         //const shellSdk = ShellSdk.init(parent, '*');
         const shellSdk = ShellSdk.init(parent, origin);
         //updateUI(ShellSdk.VERSION);
-        updateUI(shellSdk.isInsideShellModal());
+        //updateUI(shellSdk.isInsideShellModal());
         shellSdk.emit(SHELL_EVENTS.Version2.REQUIRE_CONTEXT, {
           clientIdentifier: 'selectedServiceCallId',
           auth: {
             response_type: 'token'  // request a user token within the context
           }
         });
+
+        shellSdk.on(SHELL_EVENTS.Version2.REQUIRE_CONTEXT, handler);
+        const handler = (context, origin) => {
+        updateUI("hello world"); 
+        };
+
         
-        shellSdk.on(SHELL_EVENTS.Version1.REQUIRE_CONTEXT, (event) => {
-          const {
-            cloudHost,
-            account,
-            company,
-            user,
-            auth
-          } = JSON.parse(event);
+        // shellSdk.on(SHELL_EVENTS.Version1.REQUIRE_CONTEXT, (event) => {
+        //   const {
+        //     cloudHost,
+        //     account,
+        //     company,
+        //     user,
+        //     auth
+        //   } = JSON.parse(event);
 
           initializeRefreshTokenStrategy(shellSdk, auth);
          //updateUI(user);
