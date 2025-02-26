@@ -41,7 +41,7 @@
 
           initializeRefreshTokenStrategy(shellSdk, auth);
          // updateUI("The project is 1F7C0EB08C374A028015F0C57EE1C667");
-         updateUI(user);
+         //updateUI(user);
           // Add a listener expecting activityID
            shellSdk.onViewState('selectedServiceCallId', async selectedServiceCallId => {
 
@@ -49,7 +49,7 @@
              let project = "1F7C0EB08C374A028015F0C57EE1C667";
              project = await getProject(cloudHost, account, company, selectedServiceCallId);
 
-          //   updateUI(project ? `${selectedServiceCallId.project}` : `${project}`);
+             updateUI(project ? `${selectedServiceCallId.project}` : `${project}`);
            });
   //         this.shellSdk.onViewState('selectedServiceCallId', (selectedServiceCallId => {
   // console.log(selectedServiceCallId); // -> "2081B33B672E4B69B44A902CB65CB6A0" or null
