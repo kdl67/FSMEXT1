@@ -18,9 +18,9 @@
         updateUI('Unable to reach shell eventAPI');
       } else {
         //import { ShellSdk, SHELL_EVENTS } from 'fsm-shell';   not needed?
-        // Initialise ShellSDK to connect with parent shell library
         const shellSdk = ShellSdk.init(parent, '*');
-
+        console.log(ShellSdk.VERSION);
+        updateUI(ShellSdk.VERSION);
         // Initialise the extension by requesting the fsm context
         shellSdk.emit(SHELL_EVENTS.Version1.REQUIRE_CONTEXT, {
           clientIdentifier: 'project',
