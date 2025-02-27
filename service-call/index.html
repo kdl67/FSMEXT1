@@ -24,15 +24,20 @@
             response_type: 'token'  // request a user token within the context
           }
         });
-        shellSdk.on(SHELL_EVENTS.Version1.REQUIRE_CONTEXT, (event) => {
-          const {
-            cloudHost,
-            account,
-            company,
-            user,
-            auth
-          } = JSON.parse(event);
-          updateUI(activityID);
+         shellSdk.on(SHELL_EVENTS.Version1.REQUIRE_CONTEXT, (event) => {
+        //   const {
+        //     cloudHost,
+        //     account,
+        //     company,
+        //     user,
+        //     auth
+        //   } = JSON.parse(event);
+
+           const event = (context, origin) => {
+          updateUI("hello world");
+            };
+        
+          //updateUI(activityID);
           initializeRefreshTokenStrategy(shellSdk, auth);
 
           shellSdk.onViewState('activityID', async activityID => {
