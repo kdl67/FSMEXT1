@@ -24,7 +24,7 @@
             response_type: 'token'  // request a user token within the context
           }
         });
-         shellSdk.on(SHELL_EVENTS.Version1.REQUIRE_CONTEXT, (event) => {
+         shellSdk.on(SHELL_EVENTS.Version1.REQUIRE_CONTEXT, async (event) => {
           const {
             cloudHost,
             account,
