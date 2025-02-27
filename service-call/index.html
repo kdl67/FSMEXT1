@@ -25,15 +25,15 @@
           }
         });
          shellSdk.on(SHELL_EVENTS.Version1.REQUIRE_CONTEXT, (event) => {
-        //   const {
-        //     cloudHost,
-        //     account,
-        //     company,
-        //     user,
-        //     auth
-        //   } = JSON.parse(event);
+          const {
+            cloudHost,
+            account,
+            company,
+            user,
+            auth,
+            origin
+          } = JSON.parse(event);
 
-           const event = (context, origin);
            updateUI(origin);
         
           //updateUI(activityID);
