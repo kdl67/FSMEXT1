@@ -38,10 +38,10 @@
          initializeRefreshTokenStrategy(shellSdk, auth);
          updateUI(user);
           // Add a listener expecting activityID
-           //this.shellSdk.onViewState('selectedServiceCallId', async selectedServiceCallId => {
-           //   project = await getProject(cloudHost, account, company, selectedServiceCallId);
+          this.shellSdk.onViewState('selectedServiceCallId', async selectedServiceCallId => {
+            project = await getProject(cloudHost, account, company, selectedServiceCallId);
            //   //updateUI(project ? `${selectedServiceCallid.project}` : `${project}`);
-           // });
+          });
         //  this.shellSdk.onViewState('selectedServiceCallId', (selectedServiceCallId => {
   //console.log(selectedServiceCallId); // -> "2081B33B672E4B69B44A902CB65CB6A0" or null
   // use the public API from SAP Field Service Management to retrieve the activity object based on the id value
