@@ -33,7 +33,7 @@
             auth
           } = JSON.parse(event);
           // origin = https://kdl67.github.io
-           updateUI(extension);
+           updateUI(selectedServiceCallId);
         
           //updateUI(activityID);
           initializeRefreshTokenStrategy(shellSdk, auth);
