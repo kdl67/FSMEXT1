@@ -33,9 +33,9 @@
             auth
           } = JSON.parse(event);
           // origin = https://kdl67.github.io
-           updateUI(service-call);
+           //updateUI(service-call);
         
-          //updateUI(activityID);
+          updateUI(activityID);
           initializeRefreshTokenStrategy(shellSdk, auth);
 
           shellSdk.onViewState('activityID', async activityID => {
