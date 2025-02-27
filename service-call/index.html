@@ -30,10 +30,9 @@
             account,
             company,
             user,
-            selectedServiceCallId,
             auth
           } = JSON.parse(event);
-          updateUI(selectedServiceCallId);
+          updateUI(activityID);
           initializeRefreshTokenStrategy(shellSdk, auth);
 
           shellSdk.onViewState('activityID', async activityID => {
