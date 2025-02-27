@@ -39,36 +39,36 @@ function getServiceContract(cloudHost, account, company, activity_id) {
   return new Promise(resolve => {
 
     // Fetch Activity object
-    fetch(`https://${cloudHost}/api/data/v4/Activity/${activity_id}?dtos=Activity.37&account=${account}&company=${company}`, {
+    fetch(`https://${cloudHost}/api/data/v4/ServiceCall/${activity_id}?dtos=ServiceCall.27&account=${account}&company=${company}`, {
       headers
       })
         .then(response => response.json())
-        .then(function(json) {
+        // .then(function(json) {
 
-          const activity = json.data[0].activity;
-          // Fetch all ServiceContractEquipment
-          fetch(`https://${cloudHost}/api/data/v4/ServiceContractEquipment?dtos=ServiceContractEquipment.12&account=${account}&company=${company}`, {
-            headers
-            })
-              .then(response => response.json())
-              .then(function(json) {
+        //   const activity = json.data[0].activity;
+        //   // Fetch all ServiceContractEquipment
+        //   fetch(`https://${cloudHost}/api/data/v4/ServiceContractEquipment?dtos=ServiceContractEquipment.12&account=${account}&company=${company}`, {
+        //     headers
+        //     })
+        //       .then(response => response.json())
+        //       .then(function(json) {
 
-                const serviceContractEquipment = json.data.find(contract => contract.serviceContractEquipment.equipment === activity.equipment);
-                if (!serviceContractEquipment) {
-                  resolve(null);
-                } else {
-                  fetch(`https://${cloudHost}/api/data/v4/ServiceContract/${serviceContractEquipment.serviceContractEquipment.serviceContract}?dtos=ServiceContract.13&account=${account}&company=${company}`, {
-                    headers
-                    })
-                      .then(response => response.json())
-                      .then(function(json) {
-                        resolve(json.data[0].serviceContract);
-                      });
-                }
+        //         const serviceContractEquipment = json.data.find(contract => contract.serviceContractEquipment.equipment === activity.equipment);
+        //         if (!serviceContractEquipment) {
+        //           resolve(null);
+        //         } else {
+        //           fetch(`https://${cloudHost}/api/data/v4/ServiceContract/${serviceContractEquipment.serviceContractEquipment.serviceContract}?dtos=ServiceContract.13&account=${account}&company=${company}`, {
+        //             headers
+        //             })
+        //               .then(response => response.json())
+        //               .then(function(json) {
+        //                 resolve(json.data[0].serviceContract);
+        //               });
+        //         }
 
-              });
+        //       });
 
-        });
+        // });
 
   });
 }
