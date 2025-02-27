@@ -37,7 +37,7 @@
         
           initializeRefreshTokenStrategy(shellSdk, auth);
           this.shellSdk.onViewState('activityID', (activityID => {
-            update(activityID); // -> "2081B33B672E4B69B44A902CB65CB6A0" or null
+            updateUI(activityID); // -> "2081B33B672E4B69B44A902CB65CB6A0" or null
               // use the public API from SAP Field Service Management to retrieve the activity object based on the id value
           });
           // shellSdk.onViewState('activityID', async activityID => {
