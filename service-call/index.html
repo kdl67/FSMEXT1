@@ -33,19 +33,22 @@
             auth
           } = JSON.parse(event);
           // origin = https://kdl67.github.io
-           //updateUI(service-call);
+           //updateUI(user);
         
-          updateUI(activityID);
           initializeRefreshTokenStrategy(shellSdk, auth);
-
-          shellSdk.onViewState('activityID', async activityID => {
-
-            //updateUI(`Loading ...`);
-
-            let serviceContract = await getServiceContract(cloudHost, account, company, activityID);
-
-            //updateUI(serviceContract ? `${serviceContract.contractType}` : `NO CONTRACT`);
+          this.shellSdk.onViewState('activityID', (activityID => {
+            update(activityID); // -> "2081B33B672E4B69B44A902CB65CB6A0" or null
+              // use the public API from SAP Field Service Management to retrieve the activity object based on the id value
           });
+          // shellSdk.onViewState('activityID', async activityID => {
+
+          //   //updateUI(`Loading ...`);
+          //   updateUI(activityID);
+
+          //   let serviceContract = await getServiceContract(cloudHost, account, company, activityID);
+
+          //   //updateUI(serviceContract ? `${serviceContract.contractType}` : `NO CONTRACT`);
+          // });
         });
       }
     </script>
