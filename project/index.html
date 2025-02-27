@@ -36,10 +36,9 @@
             user,
             auth
           } = JSON.parse(event);
-          updateUI(user);
 
-          initializeRefreshTokenStrategy(shellSdk, auth);
-         //updateUI(user);
+         initializeRefreshTokenStrategy(shellSdk, auth);
+         updateUI(user);
           // Add a listener expecting activityID
            //this.shellSdk.onViewState('selectedServiceCallId', async selectedServiceCallId => {
            //   project = await getProject(cloudHost, account, company, selectedServiceCallId);
@@ -51,7 +50,7 @@
             //const selectedServiceCallId = "hello world";
             //updateUI(selectedServiceCallId);
          // }));
-       // });
+        });
       }
     </script>
   </body>
