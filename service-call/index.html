@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Service contract available</title>
+    <link href="https://unpkg.com/fundamental-styles@latest/dist/fundamental-styles.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div>
+      <h2 class="fd-title fd-title--h2" id="info">No information available</h2>
+    </div>
+    <script src="https://unpkg.com/fsm-shell"></script>
+    <script src="helpers.js"></script>
+    <script>
+      const { ShellSdk, SHELL_EVENTS } = FSMShell;
+      if (!ShellSdk.isInsideShell()) {
+        updateUI('Unable to reach shell eventAPI');
+      } else {
+        const shellSdk = ShellSdk.init(parent, '*');
+        shellSdk.emit(SHELL_EVENTS.Version1.REQUIRE_CONTEXT, {
+          clientIdentifier: 'service-call',
+          auth: {
+            response_type: 'token'  // request a user token within the context
+          }
+        });
+        shellSdk.on(SHELL_EVENTS.Version1.REQUIRE_CONTEXT, (event) => {
+          const {
+            cloudHost,
+            account,
+            company,
+            user,
+            auth
+          } = JSON.parse(event);
+          updateUI(user);
+          initializeRefreshTokenStrategy(shellSdk, auth);
+
+          shellSdk.onViewState('activityID', async activityID => {
+
+            //updateUI(`Loading ...`);
+
+            let serviceContract = await getServiceContract(cloudHost, account, company, activityID);
+
+            //updateUI(serviceContract ? `${serviceContract.contractType}` : `NO CONTRACT`);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
