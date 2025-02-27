@@ -33,9 +33,8 @@
         //     auth
         //   } = JSON.parse(event);
 
-           const event = (context, origin) => {
-          updateUI("hello world");
-            };
+           const event = (context, origin);
+           updateUI(origin);
         
           //updateUI(activityID);
           initializeRefreshTokenStrategy(shellSdk, auth);
