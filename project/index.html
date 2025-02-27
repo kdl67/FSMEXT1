@@ -38,7 +38,7 @@
          initializeRefreshTokenStrategy(shellSdk, auth);
          updateUI(user);
           // Add a listener expecting activityID
-          this.shellSdk.onViewState('selectedServiceCallId', async selectedServiceCallId => {
+          shellSdk.onViewState('selectedServiceCallId', async selectedServiceCallId => {
             project = await getProject(cloudHost, account, company, selectedServiceCallId);
            //   //updateUI(project ? `${selectedServiceCallid.project}` : `${project}`);
           });
