@@ -17,10 +17,10 @@
       if (!ShellSdk.isInsideShell()) {
         updateUI('Unable to reach shell eventAPI');
       } else {
-        const shellSdk = ShellSdk.init(parent, origin);
+        const shellSdk = ShellSdk.init(parent, *);
         //updateUI(ShellSdk.VERSION);
         shellSdk.emit(SHELL_EVENTS.Version1.REQUIRE_CONTEXT, {
-          clientIdentifier: 'selectedServiceCallId',
+          clientIdentifier: 'project',
           auth: {
             response_type: 'token'  // request a user token within the context
           }
