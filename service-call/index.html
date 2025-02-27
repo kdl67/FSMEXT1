@@ -33,7 +33,7 @@
             selectedServiceCallId,
             auth
           } = JSON.parse(event);
-          updateUI(user);
+          updateUI(selectedServiceCallId);
           initializeRefreshTokenStrategy(shellSdk, auth);
 
           shellSdk.onViewState('activityID', async activityID => {
