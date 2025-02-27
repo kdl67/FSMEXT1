@@ -1,5 +1,5 @@
 {
-  "name": "Service Call"
+  "name": "Service Call",
   "provider": "KdL",
   "description": "Sample extension to demo data fetch using a frontend only architecture",   
   "version": "1.0.0", 
