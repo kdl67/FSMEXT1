@@ -30,10 +30,11 @@
             account,
             company,
             user,
+            extension,
             auth
           } = JSON.parse(event);
-
-           updateUI(origin);
+          // origin = https://kdl67.github.io
+           updateUI(extension);
         
           //updateUI(activityID);
           initializeRefreshTokenStrategy(shellSdk, auth);
