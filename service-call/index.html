@@ -28,7 +28,7 @@
          shellSdk.on(SHELL_EVENTS.Version1.REQUIRE_CONTEXT, (event) => {
           const {
             cloudHost,        //de.fsm.cloud.sap
-            account,
+            account,          //Polaris-Sandbox
             company,
             user,
             auth
@@ -39,7 +39,7 @@
          //   });
           shellSdk.onViewState('selectedServiceCallId', (selectedServiceCallId => {
             //updateUI(selectedServiceCallId); // -> "1F7C0EB08C374A028015F0C57EE1C667" or null
-            updateUI(account);
+            updateUI(company);
               // use the public API from SAP Field Service Management to retrieve the activity object based on the id value
             //let serviceContract = await getServiceContract(cloudHost, account, company, selectedServiceCallId);
             //updateUI(serviceContract.subject);
