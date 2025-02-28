@@ -20,7 +20,7 @@ function getServiceCall(serviceCall_id) {
 		for  (let i = 0; i < response.data.length; i++) {
 			projectList += "<b>Service Call:</b> " + response.data[i].serviceCall.code + " <b>Description:</b> " + response.data[i].serviceCall.subject + "<br>" ;
 		}
-			// $("#Output").html(projectList);
+			$("#info2").html(projectList);
 			// $("#Output").addClass("div2");
 		});
 	};
