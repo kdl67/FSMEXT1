@@ -62,9 +62,10 @@ function getServiceContract(cloudHost, account, company, activity_id) {
         //             headers
         //             })
         //               .then(response => response.json())
-        //               .then(function(json) {
-        //                 resolve(json.data[0].serviceContract);
-        //               });
+                      .then(function(json) {
+                       // resolve(json.data[0].serviceContract);
+                        resolve(json.data[0].serviceCall);
+                      });
         //         }
 
         //       });
