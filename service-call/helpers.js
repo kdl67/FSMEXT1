@@ -64,7 +64,7 @@ function getServiceContract(cloudHost, account, company, serviceCall_id) {
         //               .then(response => response.json())
                       .then(function(json) {
                        // resolve(json.data[0].serviceContract);
-                        resolve(json.data[0].serviceCall);
+                        resolve(json.data[0].serviceCall.code);
                       });
         //         }
 
