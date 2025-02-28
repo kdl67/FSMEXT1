@@ -40,7 +40,7 @@ function getServiceContract(cloudHost, account, company, activity_id) {
   return new Promise(resolve => {
 
     // Fetch Activity object
-    fetch(`https://${cloudHost}/api/data/v4/ServiceCall/${activity_id}?dtos=ServiceCall.27&account=${account}&company=${company}`, {
+    fetch(`https://${cloudHost}/api/data/v4/ServiceCall/${selectedServiceCallId}?dtos=ServiceCall.27&account=${account}&company=${company}`, {
       headers
       })
         .then(response => response.json())
