@@ -16,10 +16,10 @@ function getServiceCall(serviceCall_id) {
 		};
 
 		$.ajax(settings).done(function (response) {
-		let projectList = "";
-		for  (let i = 0; i < response.data.length; i++) {
-			projectList += "<b>Service Call:</b> " + response.data[i].serviceCall.code + " <b>Description:</b> " + response.data[i].serviceCall.subject + "<br>" ;
-		}
+		let projectList = ${serviceCall_id};
+		// for  (let i = 0; i < response.data.length; i++) {
+		// 	projectList += "<b>Service Call:</b> " + response.data[i].serviceCall.code + " <b>Description:</b> " + response.data[i].serviceCall.subject + "<br>" ;
+		// }
 			$("#info2").html(projectList);
 			// $("#Output").addClass("div2");
 		});
