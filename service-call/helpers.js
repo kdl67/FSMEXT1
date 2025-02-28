@@ -28,7 +28,7 @@ function initializeRefreshTokenStrategy(shellSdk, auth) {
 // 
 // Request context with activity ID to return serviceContract assigned
 //
-function getServiceContract(cloudHost, account, company, activity_id) {
+function getServiceContract(cloudHost, account, company, serviceCall_id) {
   
   const headers = {
     'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ function getServiceContract(cloudHost, account, company, activity_id) {
   return new Promise(resolve => {
 
     // Fetch Activity object
-    fetch(`https://${cloudHost}/api/data/v4/ServiceCall/${selectedServiceCallId}?dtos=ServiceCall.27&account=${account}&company=${company}`, {
+    fetch(`https://${cloudHost}/api/data/v4/ServiceCall/${serviceCall_id}?dtos=ServiceCall.27&account=${account}&company=${company}`, {
       headers
       })
         .then(response => response.json())
