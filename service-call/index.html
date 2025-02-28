@@ -42,7 +42,7 @@
             //updateUI(company);
               // use the public API from SAP Field Service Management to retrieve the activity object based on the id value
             let serviceContract = await getServiceContract(cloudHost, account, company, selectedServiceCallId);
-            updateUI(serviceContract ? ${serviceContract} : selectedServiceCallId);
+            updateUI(serviceContract ? selectedServiceCallId : selectedServiceCallId);
           }));
           // shellSdk.onViewState('activityID', async activityID => {
           //   let serviceContract = await getServiceContract(cloudHost, account, company, activityID);
